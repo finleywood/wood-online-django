@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+{% block navlinks %}
+<li class="nav-item active">
+  <a class="nav-link" href="#">Home <span class="sr-only"></span></a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/about">About <span class="sr-only"></span></a>
+</li>
+{% endblock navlinks %}
+{% block content %}
+  <h1>Popular Posts</h1><br>
+  {% for post in posts %}
+    <div class="card w-75">
+      <div class="card-body">
+        <h5 class="card-title">{{ post.title }}</h5>
+        <p class="card-text">{{ post.content }}</p>
+        <p class="text-primary">By {{ post.author }} On {{ post.date }}</p>
+      </div>
+    </div>
+    <br>
+  {% endfor %}
+  <button class="btn btn-primary">Login to see more...</button>
+{% endblock content %}
